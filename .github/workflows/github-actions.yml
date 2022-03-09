@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ubuntu-OS:$(date +%s)
+      run: docker build . --file Dockerfile --tag ubuntu-os:$(date +%s)
 
     -
       name: Login to DockerHub
@@ -32,4 +32,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: frankisinfotech/buildME
           push: true
-          tags: ubuntu-OS:$(date +%s)
+          tags: ubuntu-os:$(date +%s)
