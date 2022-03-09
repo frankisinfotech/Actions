@@ -26,3 +26,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: frankisinfotech/buildME
           push: true
+          tags: latest
