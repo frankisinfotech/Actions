@@ -26,4 +26,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: frankisinfotech/buildME
           push: true
-          tags: ubuntu-os:$(date +%s)
+          tags: app:latest
