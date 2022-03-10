@@ -23,4 +23,5 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
+        push: true
         tags: next
