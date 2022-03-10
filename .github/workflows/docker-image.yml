@@ -16,9 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      env: 
-        TAG: my-image-name:$(date +%s)
-      run: docker build . --file Dockerfile --tag ${{ env.TAG }}      
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)      
       
    
    
@@ -29,4 +27,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
         push: true
-        tags: name, ${{ env.TAG }}
+        tags: myimg
