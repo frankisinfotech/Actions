@@ -27,4 +27,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
         push: true
-        tags: latest, ${{ github.run_number }}
+        tags: next, ${{ github.run_number }}
