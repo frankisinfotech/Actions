@@ -5,7 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+    
+    
 jobs:
 
   build:
@@ -24,4 +25,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
         push: true
-        tags: next:$(date +%S)
+        tags: next-${{ date +%S }}
