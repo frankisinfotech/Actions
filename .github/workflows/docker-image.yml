@@ -21,7 +21,7 @@ jobs:
    
    
     - name: Login and push to dockerHUB
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
