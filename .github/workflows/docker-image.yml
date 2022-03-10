@@ -24,4 +24,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
         push: true
-        tags: next-$(date +%S)
+        tags: next:$(date +%S)
