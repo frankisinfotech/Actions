@@ -16,18 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-   
-   
-    - name: set env
-      run: echo "::set-env name=NOW::$(date +'%Y-%m-%dT%H:%M:%S')"
-
-   # - name: create release
-   #   uses: ncipollo/release-action@v1
-   #   with:
-   #       artifacts: my-artifact
-   #       tag: ${{ env.NOW }}
-            
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)      
       
    
    
