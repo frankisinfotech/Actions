@@ -28,4 +28,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: frankisinfotech/bulb
         push: true
-        #tags: myimg
+        tags: pyHello
