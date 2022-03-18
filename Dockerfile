@@ -1,4 +1,6 @@
-FROM ubuntu:latest
-
-RUN apt update && apt install nginx vim -y
-COPY index.html /var/www/html
+FROM python:3
+ADD api.py /
+RUN pip install flask
+RUN pip install flask_restful
+EXPOSE 8080
+CMD [ "python3", "./api.py"]
