@@ -12,8 +12,7 @@ class myHandler(BaseHTTPRequestHandler):
 		service = mappings.get(self.path)
 		if service is None:
 			status = 404	
-			service = {'msg': 'Not found'}
-			
+			service = {'msg': 'Not found'}			
 
 		self.send_response(status)
 		self.send_header('Content-type','text/html')
