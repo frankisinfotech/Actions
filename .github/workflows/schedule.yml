@@ -1,0 +1,12 @@
+name: schedule-task
+
+on:
+  push
+
+jobs:
+  Git-task
+  runs-on: ubuntu-latest
+  
+  steps:
+  - name: Add user
+    run: 'useradd frank'
