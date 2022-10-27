@@ -4,9 +4,9 @@ on:
   push
 
 jobs:
-  Git-task
-  runs-on: ubuntu-latest
+  git-task
+    runs-on: ubuntu-latest
   
-  steps:
-  - name: Add user
-    run: 'useradd frank'
+    steps:
+    - name: Add user
+    - run: 'useradd frank'
