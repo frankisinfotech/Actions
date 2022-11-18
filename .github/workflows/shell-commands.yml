@@ -14,5 +14,4 @@ jobs:
       run: |
         mkdir frankis
         node -v
-        npm -v
-        nvm -v
+        npm ls
