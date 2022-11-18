@@ -14,4 +14,3 @@ jobs:
       run: |
         mkdir frankis
         node -v
-        shell: bash -l -eo pipefail {0}
