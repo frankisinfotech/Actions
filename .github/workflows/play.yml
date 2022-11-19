@@ -15,4 +15,9 @@ jobs:
          echo $GITHUB_WORKSPACE
          echo "${{ github.token }}"
          ls -l
+   
+     - name: Checkout
+       run: |
+         uses: action/checkout@v1
+         ls -l
 #        git fetch
