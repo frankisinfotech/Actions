@@ -1,0 +1,17 @@
+name: Play with Actions
+
+on: [push]
+
+jobs:
+   play-with-actions: 
+     runs-on: ubuntu-latest
+     
+     steps:
+     - name: Get ENVs
+       run: |
+       echo $GITHUB_SHA
+       echo $GITHUB_REPOSITORY
+       echo $GITHUB_WORKSPACE
+       echo ${{ github.token }}
+       ls -l
+#        git fetch
