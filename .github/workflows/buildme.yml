@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build_docker:
     runs-on: ubuntu-latest
+    env:
+       TAG: buildme
 
     steps:
     - name: Checkout
@@ -12,4 +14,5 @@ jobs:
       
     - name: Build Me
       run: |
-         docker build -t buildme .
+         docker build -t $TAG .
+         docker scan $TAG
