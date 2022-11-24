@@ -22,5 +22,19 @@ jobs:
          echo $PAT | docker login ghcr.io -u $USER --password-stdin
          docker tag $TAG ghcr.io/$USER/${TAG}:latest
          docker push ghcr.io/$USER/${TAG}:latest
-         trivy image ghcr.io/$USER/${TAG}:latest
-     
+         
+    - name: Run static analysis
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'ghcr.io/$USER/${TAG}:latest'
+        security-checks: 'vuln,secret,config'
+        ignore-unfixed: true
+        format: 'sarif'
+        output: 'trivy-image-results.sarif'
+        severity: 'CRITICAL,HIGH'
+
+    - name: Upload Trivy Image scan results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+          sarif_file: 'trivy-image-results.sarif'
+          category: 'image'
