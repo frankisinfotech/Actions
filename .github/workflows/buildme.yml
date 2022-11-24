@@ -8,7 +8,7 @@ jobs:
     env:
        TAG: buildme
        USER: frankisinfotech
-       TTY: true
+       PAT: 1234
 
     steps:
     - name: Checkout
