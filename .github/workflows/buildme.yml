@@ -8,6 +8,7 @@ jobs:
     env:
        TAG: buildme
        USER: frankisinfotech
+       TTY: true
 
     steps:
     - name: Checkout
