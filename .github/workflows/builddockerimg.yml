@@ -3,7 +3,7 @@ name: Build-Docker-Image
 on: [push]
 
 jobs:
-  build_docker_img
+  build_docker_img:
      runs-on: ubuntu-latest
      env:
        TAG: python-api
