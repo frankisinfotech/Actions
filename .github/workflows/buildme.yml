@@ -23,3 +23,5 @@ jobs:
          docker tag $TAG ghcr.io/$USER/${TAG}:latest
          docker push ghcr.io/$USER/${TAG}:latest
          docker scan ghcr.io/$USER/${TAG}:latest
+         shell: /usr/bin/bash -e {0}
+
