@@ -18,15 +18,15 @@ jobs:
       uses: actions/checkout@v1
       
     - name: Build Me
-      run: |
-         docker build -t $TAG .
+      run: docker build -t $TAG .
+      
     - name: GHCR Login
       run: |
          echo $PAT | docker login ghcr.io -u $USER --password-stdin
          docker tag $TAG ghcr.io/$USER/${TAG}:${{ env.VERSION }}
          docker push ghcr.io/$USER/${TAG}:${{ env.VERSION }}
          
-    - name: Run static analysis
+    - name: Image Scan
       uses: aquasecurity/trivy-action@master
       with:
         image-ref: '${{ env.REGISTRY }}/${{ env.USER }}/${{ env.TAG }}:${{ env.VERSION }}'
