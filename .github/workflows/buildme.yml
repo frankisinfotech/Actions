@@ -22,4 +22,5 @@ jobs:
          echo $PAT | docker login ghcr.io -u $USER --password-stdin
          docker tag $TAG ghcr.io/$USER/${TAG}:latest
          docker push ghcr.io/$USER/${TAG}:latest
-         docker scan ghcr.io/$USER/${TAG}:latest
+         trivy image ghcr.io/$USER/${TAG}:latest
+     
