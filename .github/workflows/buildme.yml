@@ -10,7 +10,7 @@ jobs:
        USER: frankisinfotech
        PAT: ${{secrets.GITHUB_TOKEN}}
        REGISTRY: ghcr.io
-       IMAGE_NAME: ${{ github.repository }}
+       VERSION: latest
 
 
     steps:
@@ -23,14 +23,13 @@ jobs:
     - name: GHCR Login
       run: |
          echo $PAT | docker login ghcr.io -u $USER --password-stdin
-         docker tag $TAG ghcr.io/$USER/${TAG}:${{ github.sha }}
-         docker push ghcr.io/$USER/${TAG}:${{ github.sha }}
+         docker tag $TAG ghcr.io/$USER/${TAG}:${{ env.VERSION }}
+         docker push ghcr.io/$USER/${TAG}:${{ env.VERSION }}
          
     - name: Run static analysis
       uses: aquasecurity/trivy-action@master
       with:
-        image-ref: '${{ env.REGISTRY }}/${{ env.USER }}/${{ env.TAG }}:${{ github.sha }}'
-#         ghcr.io/$USER/${TAG}:${{ github.sha }}'
+        image-ref: '${{ env.REGISTRY }}/${{ env.USER }}/${{ env.TAG }}:${{ env.VERSION }}'
         security-checks: 'vuln,secret,config'
         ignore-unfixed: true
         format: 'sarif'
