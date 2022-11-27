@@ -1,7 +1,8 @@
 name: Shell Commands
 
 on: 
-  push:
+  #push:
+  pull_request:
 
 jobs:
   run-shell-cmd:
