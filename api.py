@@ -3,7 +3,7 @@
 
 PORT_NUMBER = 8080
 
-mappings = { '/hello': {'msg': 'Hello World, my people'}, '/health': {'msg': 'Healthy'} }
+mappings = { '/hello': {'msg': 'Hello World'}, '/health': {'msg': 'Healthy'} }
 
 class myHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
