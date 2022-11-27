@@ -1,6 +1,7 @@
 name: Shell Commands
 
-on: [push]
+on: 
+  push:
 
 jobs:
   run-shell-cmd:
@@ -14,3 +15,9 @@ jobs:
       run: |
         mkdir frankis
         node -v
+
+    - name: ENV Displays
+      run: |
+         echo $GITHUB_SHA
+         echo $GITHUB_REPOSITORY
+         echo $GITHUB_TOKEN
