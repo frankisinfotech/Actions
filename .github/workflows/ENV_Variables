@@ -1,0 +1,39 @@
+name: Env Variables
+
+on: push
+env:
+  WF_ENV: Available to all jobs
+
+jobs:
+
+  envLog:
+     runs-on: ubuntu-latest
+     env:
+       JB_ENV: Available to all the steps in the job
+       
+     steps:
+     
+       - name: Get Step Variables
+         env:
+           ST_ENV: Available to this step only
+         run: |
+           echo "ST_ENV: ${ST_ENV}"
+           echo "JB_ENV: ${ST_ENV}"
+           echo "WF_ENV: ${ST_ENV}"
+           
+       - name: Get additional Variables
+         env:
+           AST_ENV: Available to Another step only
+         run: |
+           echo "ST_ENV: ${ST_ENV}"
+           echo "JB_ENV: ${ST_ENV}"
+           echo "WF_ENV: ${ST_ENV}"
+           
+   AenvLog:
+      runs-on: ubuntu-latest
+      env:
+        A_ENV: Another job variable
+      
+      steps:
+        - name: A ENV
+          run: echo "A_ENV: ${A_ENV}"
