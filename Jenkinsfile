@@ -2,7 +2,11 @@ pipeline {
   agent any
   stages {
 
-   
+    stage ('Get ENV Variables') {
+      steps {
+        sh 'printenv'
+    }
+  }
     stage ('Build Image') {
       steps {
         sh 'docker build -t dnerorepo/python-apps .'
