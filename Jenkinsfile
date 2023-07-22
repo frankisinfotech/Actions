@@ -9,14 +9,14 @@ pipeline {
   }
     stage ('Build Image') {
       steps {
-        sh 'docker build -t dnerorepo/python-apps .'
+        sh 'docker build -t dnerorepo/python-apps:${BUILD_ID} .'
       }
     }
 
         stage ('Docker Login and Publish') {
       steps {
         withDockerRegistry([credentialsId: 'dockerIDCred', url: ""]){
-           sh 'docker push dnerorepo/python-apps'
+           sh 'docker push dnerorepo/python-apps:${BUILD_ID}'
       }
     }
         }
