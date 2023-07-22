@@ -10,13 +10,13 @@ pipeline {
    
     stage ('Build Image') {
       steps {
-        sh 'docker build -t dnerorepo/python-apps:v1 .'
+        sh 'docker build -t dnerorepo/python-apps .'
       }
     }
 
     stage ('Pubilsh Image') {
       steps {
-        sh 'docker push dnerorepo/python-apps:v1'
+        sh 'docker push dnerorepo/python-apps'
       }
     }
 
