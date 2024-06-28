@@ -2,7 +2,7 @@ name: Build Me Docker
 
 on: [push]
 
-jobs:
+jobs: 
   build_docker:
     runs-on: ubuntu-latest
     env:
